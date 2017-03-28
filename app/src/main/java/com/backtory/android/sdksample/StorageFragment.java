@@ -7,17 +7,15 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.Switch;
 
-import com.backtory.androidsdk.internal.BacktoryCallBack;
-import com.backtory.androidsdk.internal.BacktoryFile;
-import com.backtory.androidsdk.internal.BulkOperation;
-import com.backtory.androidsdk.internal.Request;
-import com.backtory.androidsdk.model.BacktoryResponse;
+import com.backtory.java.internal.BacktoryCallBack;
+import com.backtory.java.internal.BacktoryFile;
+import com.backtory.java.internal.BulkOperation;
+import com.backtory.java.internal.Request;
+import com.backtory.java.model.BacktoryResponse;
 
 import java.util.ArrayList;
 import java.util.Collections;

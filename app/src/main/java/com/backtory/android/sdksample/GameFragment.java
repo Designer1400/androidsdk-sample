@@ -7,8 +7,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.backtory.androidsdk.model.BacktoryLeaderBoard.LeaderBoardRank;
-import com.backtory.androidsdk.model.BacktoryLeaderBoard.LeaderBoardResponse;
+
+import com.backtory.java.model.BacktoryLeaderBoard.LeaderBoardRank;
+import com.backtory.java.model.BacktoryLeaderBoard.LeaderBoardResponse;
 
 import java.util.Random;
 

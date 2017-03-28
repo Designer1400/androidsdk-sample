@@ -4,10 +4,10 @@ package com.backtory.android.sdksample;
 import android.support.v4.app.Fragment;
 import android.view.View;
 
-import com.backtory.androidsdk.HttpStatusCode;
-import com.backtory.androidsdk.internal.BacktoryCallBack;
-import com.backtory.androidsdk.internal.BacktoryCloudCode;
-import com.backtory.androidsdk.model.BacktoryResponse;
+import com.backtory.java.HttpStatusCode;
+import com.backtory.java.internal.BacktoryCallBack;
+import com.backtory.java.internal.BacktoryCloudCode;
+import com.backtory.java.model.BacktoryResponse;
 
 /**
  * A simple {@link Fragment} subclass.

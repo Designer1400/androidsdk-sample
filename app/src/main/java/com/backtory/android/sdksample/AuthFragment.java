@@ -3,12 +3,12 @@ package com.backtory.android.sdksample;
 
 import android.view.View;
 
-import com.backtory.androidsdk.HttpStatusCode;
-import com.backtory.androidsdk.internal.BacktoryCallBack;
-import com.backtory.androidsdk.model.BacktoryResponse;
-import com.backtory.androidsdk.model.BacktoryUser;
-import com.backtory.androidsdk.model.GuestRegistrationParam;
-import com.backtory.androidsdk.model.LoginResponse;
+import com.backtory.java.HttpStatusCode;
+import com.backtory.java.internal.BacktoryCallBack;
+import com.backtory.java.model.BacktoryResponse;
+import com.backtory.java.model.BacktoryUser;
+import com.backtory.java.model.GuestRegistrationParam;
+import com.backtory.java.model.LoginResponse;
 
 import static com.backtory.android.sdksample.MainActivity.generateEmail;
 import static com.backtory.android.sdksample.MainActivity.generatePassword;

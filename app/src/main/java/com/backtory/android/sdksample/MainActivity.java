@@ -1,7 +1,6 @@
 package com.backtory.android.sdksample;
 
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
@@ -16,8 +15,8 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.backtory.androidsdk.internal.BacktoryCallBack;
-import com.backtory.androidsdk.model.BacktoryResponse;
+import com.backtory.java.internal.BacktoryCallBack;
+import com.backtory.java.model.BacktoryResponse;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 

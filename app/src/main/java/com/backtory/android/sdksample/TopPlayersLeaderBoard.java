@@ -1,7 +1,8 @@
 package com.backtory.android.sdksample;
 
-import com.backtory.androidsdk.annotation.LeaderBoardId;
-import com.backtory.androidsdk.model.BacktoryLeaderBoard;
+
+import com.backtory.java.annotation.LeaderBoardId;
+import com.backtory.java.model.BacktoryLeaderBoard;
 
 public class TopPlayersLeaderBoard extends BacktoryLeaderBoard {
   @LeaderBoardId

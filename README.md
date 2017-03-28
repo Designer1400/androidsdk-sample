@@ -22,8 +22,8 @@ and this line to its dependencies segment
 ```java
 compile 'com.backtory.android:backtorysdk:<latest-version>'
 ```
-Latest version: [ ![Download](https://api.bintray.com/packages/pegah-backtory/maven/backtorysdk/images/download.svg) ](https://bintray.com/pegah-backtory/maven/backtorysdk/_latestVersion)
+Latest version:  [ ![Download](https://api.bintray.com/packages/pegah-backtory/maven/backtory-java-sdk/images/download.svg) ](https://bintray.com/pegah-backtory/maven/backtory-java-sdk/_latestVersion)
 
-Checkout Backtory Android sdk [documentations] (https://backtory.com/docs/android/intro.html)
+Checkout Backtory Android sdk [documentations](https://backtory.com/docs/android/intro.html)
 for more info about sdk installation and using backtory services in Android applications.
 
