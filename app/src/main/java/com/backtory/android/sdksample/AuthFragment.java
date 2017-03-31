@@ -5,10 +5,10 @@ import android.view.View;
 
 import com.backtory.java.HttpStatusCode;
 import com.backtory.java.internal.BacktoryCallBack;
-import com.backtory.java.model.BacktoryResponse;
-import com.backtory.java.model.BacktoryUser;
-import com.backtory.java.model.GuestRegistrationParam;
-import com.backtory.java.model.LoginResponse;
+import com.backtory.java.internal.BacktoryResponse;
+import com.backtory.java.internal.BacktoryUser;
+import com.backtory.java.internal.GuestRegistrationParam;
+import com.backtory.java.internal.LoginResponse;
 
 import static com.backtory.android.sdksample.MainActivity.generateEmail;
 import static com.backtory.android.sdksample.MainActivity.generatePassword;
@@ -17,7 +17,7 @@ import static com.backtory.android.sdksample.MainActivity.gson;
 import static com.backtory.android.sdksample.MainActivity.lastGenPassword;
 import static com.backtory.android.sdksample.MainActivity.lastGenUsername;
 
-public class AuthFragment extends MainActivity.AbsFragment{
+public class AuthFragment extends MainActivity.AbsFragment {
 
   void register() {
     new BacktoryUser.Builder().
@@ -235,14 +235,14 @@ public class AuthFragment extends MainActivity.AbsFragment{
 
   void currentUser() {
     BacktoryUser currentUser = BacktoryUser.getCurrentUser();
-    textView.setText("firsName: " + currentUser.getFirstName() + "\n" +
-        "username: " + currentUser.getUsername());
-    //BacktoryUser.getCurrentUser().isGuest();
+    textView.setText(currentUser != null ?
+        gson.toJson(currentUser) :
+        "no logged in user exist!");
   }
 
   @Override
   public void onClick(View view) {
-    switch (view.getId()){
+    switch (view.getId()) {
       case R.id.button_register_user:
         register();
         break;

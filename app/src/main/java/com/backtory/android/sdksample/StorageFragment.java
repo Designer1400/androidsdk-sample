@@ -13,9 +13,9 @@ import android.widget.Switch;
 
 import com.backtory.java.internal.BacktoryCallBack;
 import com.backtory.java.internal.BacktoryFile;
+import com.backtory.java.internal.BacktoryResponse;
 import com.backtory.java.internal.BulkOperation;
 import com.backtory.java.internal.Request;
-import com.backtory.java.model.BacktoryResponse;
 
 import java.util.ArrayList;
 import java.util.Collections;

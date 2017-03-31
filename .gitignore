@@ -42,3 +42,4 @@ captures/
 
 # Findbugs
 findbugs-android-exclude.xml
+/CHANGELOG.md

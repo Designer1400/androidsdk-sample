@@ -1,5 +1,5 @@
 # Backtory Android SDK Sample
-Sample usage of [Backtory] (https://backtory.com) mbaas Android SDK
+Sample usage of [Backtory](https://backtory.com) MBaaS Android SDK
 
 ### What's this sample for?
 This project shows the recommended way of using backtory-sdk in an Android project. It will be kept updated by the
@@ -18,12 +18,12 @@ repositories {
     }
 }
 ```
-and this line to its dependencies segment
+and add this line to its dependencies segment
 ```java
 compile 'com.backtory.android:backtorysdk:<latest-version>'
 ```
 Latest version:  [ ![Download](https://api.bintray.com/packages/pegah-backtory/maven/backtory-java-sdk/images/download.svg) ](https://bintray.com/pegah-backtory/maven/backtory-java-sdk/_latestVersion)
 
-Checkout Backtory Android sdk [documentations](https://backtory.com/docs/android/intro.html)
+Checkout Backtory Android sdk [documentations](https://backtory.com/documents/intro/setup/android.html)
 for more info about sdk installation and using backtory services in Android applications.
 

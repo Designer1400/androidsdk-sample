@@ -16,7 +16,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.backtory.java.internal.BacktoryCallBack;
-import com.backtory.java.model.BacktoryResponse;
+import com.backtory.java.internal.BacktoryResponse;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -45,7 +45,6 @@ public class MainActivity extends AppCompatActivity {
     //PreferenceManager.getDefaultSharedPreferences(this).edit().clear().commit();
   }
 
-
   //-----------------------------------------------------------------------------
 
   static Gson gson = new GsonBuilder().serializeNulls().setPrettyPrinting().create();
@@ -68,83 +67,93 @@ public class MainActivity extends AppCompatActivity {
     return s;
   }
 
-  //-----------------------------------------------------------------------------
-  public abstract static class AbsFragment extends Fragment implements View.OnClickListener {
-    TextView textView;
+//-----------------------------------------------------------------------------
+public abstract static class AbsFragment extends Fragment implements View.OnClickListener {
+  TextView textView;
 
-    @Nullable
-    @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-      View v = inflater.inflate(getLayoutRes(), container, false);
-      textView = (TextView) v.findViewById(R.id.textview);
-      for (int id : getButtonsId()){
-        v.findViewById(id).setOnClickListener(this);
-      }
-      return v;
+  @Nullable
+  @Override
+  public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    View v = inflater.inflate(getLayoutRes(), container, false);
+    textView = (TextView) v.findViewById(R.id.textview);
+    for (int id : getButtonsId()) {
+      v.findViewById(id).setOnClickListener(this);
     }
-
-    /**
-     * Setting enclosing class as click listener for all the layout buttons
-     * @return list of this fragment's buttons ids. Order doesn't matter
-     */
-    protected abstract int[] getButtonsId();
-
-    protected abstract
-    @LayoutRes
-    int getLayoutRes();
-
-    protected <T> BacktoryCallBack<T> printCallBack() {
-      return new BacktoryCallBack<T>() {
-        @Override
-        public void onResponse(BacktoryResponse<T> response) {
-          if (response.isSuccessful())
-            textView.setText(response.body() != null ? gson.toJson(response.body()) : "successful");
-          else
-            textView.setText(response.message());
-        }
-      };
-    }
-
-    void toast(String message) {
-      Toast.makeText(getContext(), message, Toast.LENGTH_SHORT).show();
-    }
-
+    return v;
   }
 
-  //---------------------------------------------------------------------------
+  /**
+   * Setting enclosing class as click listener for all the layout buttons
+   *
+   * @return list of this fragment's buttons ids. Order doesn't matter
+   */
+  protected abstract int[] getButtonsId();
 
+  protected abstract
+  @LayoutRes
+  int getLayoutRes();
 
-  public static class SampleFragmentPagerAdapter extends FragmentPagerAdapter {
-    private String tabTitles[] = new String[]{"Auth", "Lambda", "Game", "Storage"};
-
-    SampleFragmentPagerAdapter(FragmentManager fm) {
-      super(fm);
-    }
-
-    @Override
-    public int getCount() {
-      return tabTitles.length;
-    }
-
-    @Override
-    public AbsFragment getItem(int position) {
-      switch (position) {
-        case 0:
-          return new AuthFragment();
-        case 1:
-          return new CloudCodeFragment();
-        case 2:
-          return new GameFragment();
-        case 3:
-          return new StorageFragment();
+  protected <T> BacktoryCallBack<T> printCallBack() {
+    return new BacktoryCallBack<T>() {
+      @Override
+      public void onResponse(BacktoryResponse<T> response) {
+        if (response.isSuccessful())
+          textView.setText(response.body() != null ? gson.toJson(response.body()) : "successful");
+        else
+          textView.setText(response.message());
       }
-      return null;
-    }
-
-    @Override
-    public CharSequence getPageTitle(int position) {
-      // Generate title based on item position
-      return tabTitles[position];
-    }
+    };
   }
+
+  void toast(String message) {
+    Toast.makeText(getContext(), message, Toast.LENGTH_SHORT).show();
+  }
+
+}
+
+//---------------------------------------------------------------------------
+
+
+public static class SampleFragmentPagerAdapter extends FragmentPagerAdapter {
+  private String tabTitles[] = new String[]{"Auth", "Lambda", "Game", "Storage",
+      "Matchmaking", "Challenge", "Realtime", "Chat"};
+
+  SampleFragmentPagerAdapter(FragmentManager fm) {
+    super(fm);
+  }
+
+  @Override
+  public int getCount() {
+    return tabTitles.length;
+  }
+
+  @Override
+  public AbsFragment getItem(int position) {
+    switch (position) {
+      case 0:
+        return new AuthFragment();
+      case 1:
+        return new CloudCodeFragment();
+      case 2:
+        return new GameFragment();
+      case 3:
+        return new StorageFragment();
+      case 4:
+        return new MatchmakingFragment();
+      case 5:
+        return new ChallengeFragment();
+      case 6:
+        return RealtimeFragment.getInstance();
+      case 7:
+        return new ChatFragment();
+    }
+    return null;
+  }
+
+  @Override
+  public CharSequence getPageTitle(int position) {
+    // Generate title based on item position
+    return tabTitles[position];
+  }
+}
 }
